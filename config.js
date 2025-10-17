@@ -51,7 +51,7 @@ const siteConfig = {
         },
         {
             title: "Lovart AI",
-            url: "https://www.lovart.ai/it",
+            url: "https://tryit.cc/GsUk8k",
             type: "amazon"
         },
         {
