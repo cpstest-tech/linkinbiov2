@@ -30,6 +30,11 @@ const siteConfig = {
             type: "gradient"
         },
         {
+            title: "INIU 10,000mAh Magnetic Power Bank",
+            url: "https://amazn.so/d5yEhDn",
+            type: "amazon"
+        },
+        {
             title: "Telegram",
             url: "https://t.me/cpstestlounge",
             type: "telegram"
