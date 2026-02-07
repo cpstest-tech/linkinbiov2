@@ -13,14 +13,14 @@ const siteConfig = {
             }
         }
     },
-    
+
     // Link Social (aggiungi i tuoi link reali)
     social: {
         tiktok: "https://tiktok.com/@cpstest_",
         youtube: "https://youtube.com/@cpstest_yt",
         instagram: "https://instagram.com/cpstest_"
     },
-    
+
     // Link dei bottoni
     links: [
         {
@@ -31,8 +31,8 @@ const siteConfig = {
             icon: "fas fa-desktop"
         },
         {
-            title: "INIU 10,000mAh Magnetic Power Bank",
-            url: "https://amazn.so/d5yEhDn",
+            title: "INIU P81 Power Bank",
+            url: "https://amzn.to/4r7eWgf",
             type: "amazon",
             icon: "fas fa-bolt"
         },
@@ -59,18 +59,6 @@ const siteConfig = {
             url: "https://www.temu.com/kuiper/uk1.html?subj=bundle-un&_bg_fs=1&_p_mat2_type=m6001&_p_jump_id=901&_x_vst_scene=adg&_p_rfs=1&_x_ads_channel=kol_tiktok&_x_campaign=110161401&_x_cid=4041167427kol_tiktok&_x_ns_creative=4041167427&_x_ns_adg_stid=8f7cbf9f8f80467eb4a7472f2c025b83",
             type: "temu",
             icon: "fas fa-shopping-bag"
-        },
-        {
-            title: "Lovart AI",
-            url: "https://tryit.cc/GsUk8k",
-            type: "ai",
-            icon: "fas fa-robot"
-        },
-        {
-            title: "Plaud Note",
-            url: "https://www.amazon.it/dp/B0DZWYF6DL?maas=maas_adg_7D559FE05C6C271DD74D5AB460C672DE_afap_abs&ref_=aa_maas&tag=maas",
-            type: "amazon",
-            icon: "fab fa-amazon"
         }
     ]
 };
