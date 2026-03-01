@@ -31,6 +31,12 @@ const siteConfig = {
             icon: "fas fa-desktop"
         },
         {
+            title: "PC Gaming 350 Euro",
+            url: "https://www.vinted.it/items/8293827475-pc-gaming-ryzen-5-3600-rx-570?referrer=catalogf",
+            type: "amazon",
+            icon: "fas fa-computer"
+        },
+        {
             title: "INIU P81 Power Bank",
             url: "https://amzn.to/4r7eWgf",
             type: "amazon",
