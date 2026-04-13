@@ -31,16 +31,16 @@ const siteConfig = {
             icon: "fas fa-desktop"
         },
         {
-            title: "PC Gaming 350 Euro",
-            url: "https://www.vinted.it/items/8293827475-pc-gaming-ryzen-5-3600-rx-570?referrer=catalogf",
-            type: "amazon",
-            icon: "fas fa-computer"
-        },
-        {
-            title: "INIU P81 Power Bank",
-            url: "https://amzn.to/4r7eWgf",
+            title: "Sito INIU",
+            url: "https://shm.to/jgdkrX9",
             type: "amazon",
             icon: "fas fa-bolt"
+        },
+        {
+            title: "INIU P50 Pocket Rocket",
+            url: "https://amzn.to/3OB7dZF",
+            type: "amazon",
+            icon: "fas fa-amazon"
         },
         {
             title: "Telegram",
