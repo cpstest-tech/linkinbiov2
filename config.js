@@ -40,7 +40,7 @@ const siteConfig = {
             title: "INIU P50 Pocket Rocket",
             url: "https://amzn.to/3OB7dZF",
             type: "amazon",
-            icon: "fas fa-amazon"
+            icon: "fab fa-amazon"
         },
         {
             title: "Telegram",
