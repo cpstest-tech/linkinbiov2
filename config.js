@@ -31,6 +31,12 @@ const siteConfig = {
             icon: "fas fa-desktop"
         },
         {
+            title: "Cleaner Guru",
+            url: "https://cleanerguru-influencers.onelink.me/6P6i/m3kwgukp",
+            type: "amazon",
+            icon: "fas fa-brands fa-app-store-ios"
+        },
+        {
             title: "Sito INIU",
             url: "https://shm.to/jgdkrX9",
             type: "amazon",
