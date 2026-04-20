@@ -33,7 +33,7 @@ const siteConfig = {
         {
             title: "Cleaner Guru",
             url: "https://cleanerguru-influencers.onelink.me/6P6i/m3kwgukp",
-            type: "amazon",
+            type: "telegram",
             icon: "fas fa-brands fa-app-store-ios"
         },
         {
