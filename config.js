@@ -8,8 +8,8 @@ const siteConfig = {
             width: "150px",
             height: "150px",
             mobile: {
-                width: "120px",
-                height: "120px"
+                width: "95px",
+                height: "95px"
             }
         }
     },
@@ -18,8 +18,50 @@ const siteConfig = {
     social: {
         tiktok: "https://tiktok.com/@cpstest_",
         youtube: "https://youtube.com/@cpstest_yt",
-        instagram: "https://instagram.com/cpstest_"
+        instagram: "https://instagram.com/cpstest_",
+        telegram: "https://t.me/cpstestlounge",
+        discord: "https://discord.gg/c8uBf2byM7"
     },
+
+    // Sponsor (Carosello)
+    sponsors: [
+        {
+            title: "Temu",
+            description: "Offerte incredibili e sconti pazzeschi, non farti scappare l'occasione!",
+            image: "foto/temu.png",
+            url: "https://www.temu.com/kuiper/uk1.html?subj=bundle-un&_bg_fs=1&_p_mat2_type=m6001&_p_jump_id=901&_x_vst_scene=adg&_p_rfs=1&_x_ads_channel=kol_tiktok&_x_campaign=110161401&_x_cid=4041167427kol_tiktok&_x_ns_creative=4041167427&_x_ns_adg_stid=8f7cbf9f8f80467eb4a7472f2c025b83"
+        },
+        {
+            title: "Sito INIU",
+            description: "Scopri i migliori accessori e powerbank INIU!",
+            image: "foto/iniu-web.png",
+            url: "https://shm.to/jgdkrX9"
+        },
+        {
+            title: "INIU P50 Pocket Rocket",
+            description: "Il powerbank super compatto e potente di cui hai bisogno.",
+            image: "foto/iniu-p50.png",
+            url: "https://amzn.to/3OB7dZF"
+        },
+        {
+            title: "INIU P781",
+            description: "Powerbank Qi 2.2 super efficiente per ricariche fulminee.",
+            image: "foto/iniu-p781.webp",
+            url: "https://shm.to/jgdkrX9" // DA AGGIORNARE CON URL CORRETTO
+        },
+        {
+            title: "Cleaner Guru",
+            description: "La migliore app per pulire e ottimizzare il tuo iPhone!",
+            image: "foto/cleaner-guru.png",
+            url: "https://cleanerguru-influencers.onelink.me/6P6i/m3kwgukp"
+        },
+        {
+            title: "Amazon",
+            description: "Acquista i tuoi prodotti tech preferiti supportando il canale!",
+            image: "foto/amazon.png",
+            url: "https://www.amazon.it?&linkCode=ll2&tag=cpstest05-21"
+        }
+    ],
 
     // Link dei bottoni
     links: [
@@ -29,48 +71,6 @@ const siteConfig = {
             url: "https://build-pc.it",
             type: "gradient",
             icon: "fas fa-desktop"
-        },
-        {
-            title: "Cleaner Guru",
-            url: "https://cleanerguru-influencers.onelink.me/6P6i/m3kwgukp",
-            type: "telegram",
-            icon: "fas fa-brands fa-app-store-ios"
-        },
-        {
-            title: "Sito INIU",
-            url: "https://shm.to/jgdkrX9",
-            type: "amazon",
-            icon: "fas fa-bolt"
-        },
-        {
-            title: "INIU P50 Pocket Rocket",
-            url: "https://amzn.to/3OB7dZF",
-            type: "amazon",
-            icon: "fab fa-amazon"
-        },
-        {
-            title: "Telegram",
-            url: "https://t.me/cpstestlounge",
-            type: "telegram",
-            icon: "fab fa-telegram"
-        },
-        {
-            title: "Discord",
-            url: "https://discord.gg/c8uBf2byM7",
-            type: "discord",
-            icon: "fab fa-discord"
-        },
-        {
-            title: "Amazon",
-            url: "https://www.amazon.it?&linkCode=ll2&tag=cpstest05-21",
-            type: "amazon",
-            icon: "fab fa-amazon"
-        },
-        {
-            title: "Temu",
-            url: "https://www.temu.com/kuiper/uk1.html?subj=bundle-un&_bg_fs=1&_p_mat2_type=m6001&_p_jump_id=901&_x_vst_scene=adg&_p_rfs=1&_x_ads_channel=kol_tiktok&_x_campaign=110161401&_x_cid=4041167427kol_tiktok&_x_ns_creative=4041167427&_x_ns_adg_stid=8f7cbf9f8f80467eb4a7472f2c025b83",
-            type: "temu",
-            icon: "fas fa-shopping-bag"
         }
     ]
 };

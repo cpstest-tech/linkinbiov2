@@ -27,8 +27,19 @@ const siteConfig = {
     social: {
         tiktok: "https://tiktok.com/@tuo_username",
         youtube: "https://youtube.com/@tuo_canale",
-        instagram: "https://instagram.com/tuo_profilo"
+        instagram: "https://instagram.com/tuo_profilo",
+        telegram: "https://t.me/tuo_canale",
+        discord: "https://discord.gg/tuo_server"
     },
+    
+    sponsors: [
+        {
+            title: "Nome Sponsor",
+            description: "Descrizione dello sponsor",
+            image: "foto/immagine.jpg",
+            url: "https://link-sponsor.com"
+        }
+    ],
     
     links: [
         {
