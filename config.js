@@ -44,10 +44,10 @@ const siteConfig = {
             url: "https://amzn.to/3OB7dZF"
         },
         {
-            title: "INIU P781",
-            description: "Powerbank Qi 2.2 super efficiente per ricariche fulminee.",
+            title: "INIU SnapGo Air",
+            description: "Il powerbank Qi 2.2 magsafe super efficiente.",
             image: "foto/iniu-p781.webp",
-            url: "https://shm.to/jgdkrX9" // DA AGGIORNARE CON URL CORRETTO
+            url: "https://amazn.so/Gd9HEtp"
         },
         {
             title: "Cleaner Guru",
