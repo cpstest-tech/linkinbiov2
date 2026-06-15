@@ -50,12 +50,6 @@ const siteConfig = {
             url: "https://amzn.to/3OB7dZF"
         },
         {
-            title: "Cleaner Guru",
-            description: "La migliore app per pulire e ottimizzare il tuo iPhone!",
-            image: "foto/cleaner-guru.png",
-            url: "https://cleanerguru-influencers.onelink.me/6P6i/m3kwgukp"
-        },
-        {
             title: "Amazon",
             description: "Acquista i tuoi prodotti tech preferiti supportando il canale!",
             image: "foto/amazon.png",
