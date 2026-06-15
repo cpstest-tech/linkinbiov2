@@ -38,16 +38,16 @@ const siteConfig = {
             url: "https://shm.to/jgdkrX9"
         },
         {
-            title: "INIU P50 Pocket Rocket",
-            description: "Il powerbank super compatto e potente di cui hai bisogno.",
-            image: "foto/iniu-p50.png",
-            url: "https://amzn.to/3OB7dZF"
-        },
-        {
             title: "INIU SnapGo Air",
             description: "Il powerbank Qi 2.2 magsafe super efficiente.",
             image: "foto/iniu-p781.webp",
             url: "https://amazn.so/Gd9HEtp"
+        },
+        {
+            title: "INIU P50 Pocket Rocket",
+            description: "Il powerbank super compatto e potente di cui hai bisogno.",
+            image: "foto/iniu-p50.png",
+            url: "https://amzn.to/3OB7dZF"
         },
         {
             title: "Cleaner Guru",
