@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promo UniCredit & Info</title>
+  <style>
+    :root {
+      --primary: #0066cc;
+      --primary-hover: #004fb3;
+      --bg-card: #ffffff;
+      --bg-page: #0f172a;
+      --text-main: #f8fafc;
+      --text-card: #1e293b;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --radius: 16px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px 16px;
+    }
+
+    .main-wrapper {
+      width: 100%;
+      max-width: 680px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* CARD PROMO PRINCIPALE */
+    .hero-card {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      border: 1px solid #334155;
+      padding: 32px;
+      border-radius: var(--radius);
+      text-align: center;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-title {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      background: linear-gradient(to right, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-sub {
+      color: #94a3b8;
+      font-size: 1rem;
+      margin-bottom: 24px;
+    }
+
+    .code-container {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px dashed #475569;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 24px;
+    }
+
+    .code-label {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .code-value {
+      font-family: monospace;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #38bdf8;
+      letter-spacing: 2px;
+    }
+
+    /* FAQ CONTAINER (LIGHT THEME DENTRO LA CARD) */
+    .faq-container {
+      background: var(--bg-card);
+      color: var(--text-card);
+      padding: 32px;
+      border-radius: var(--radius);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+    }
+
+    .faq-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-align: center;
+      color: var(--text-card);
+    }
+
+    .accordion-item {
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .accordion-item:hover {
+      border-color: #cbd5e1;
+    }
+
+    .accordion-header {
+      width: 100%;
+      padding: 18px 20px;
+      background: none;
+      border: none;
+      text-align: left;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-card);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .accordion-header:hover {
+      background-color: #f8fafc;
+    }
+
+    .accordion-icon {
+      width: 20px;
+      height: 20px;
+      transition: transform 0.3s ease;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    .accordion-item.active .accordion-icon {
+      transform: rotate(180deg);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease-out, padding 0.35s ease;
+      background-color: #ffffff;
+      padding: 0 20px;
+    }
+
+    .accordion-item.active .accordion-content {
+      padding: 0 20px 20px 20px;
+    }
+
+    .content-body {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 14px;
+    }
+
+    /* BOTTONI */
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: var(--transition);
+      flex: 1;
+      min-width: 180px;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-telegram {
+      background-color: #229ED9;
+      color: white;
+    }
+
+    .btn-telegram:hover {
+      background-color: #1a82b4;
+      transform: translateY(-2px);
+    }
+
+    .btn-tiktok {
+      background-color: #000000;
+      color: white;
+    }
+
+    .btn-tiktok:hover {
+      background-color: #1a1a1a;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main-wrapper">
+    
+    <!-- CARD PRINCIPALE HERO -->
+    <div class="hero-card">
+      <h1 class="hero-title">Promozione UniCredit</h1>
+      <p class="hero-sub">Usa il codice promozionale qui sotto per richiedere il conto direttamente online.</p>
+      
+      <div class="code-container">
+        <div class="code-label">Il tuo Codice Promo</div>
+        <div class="code-value">B2601MZFF621B2</div>
+      </div>
+
+      <div class="btn-group">
+        <a href="https://prodotti-per-te.unicredit.it/workflow/UCX_AOO_GENIUS_UCI?tenant_code=BBB&target_tenant_code=BBB" target="_blank" class="btn btn-primary">
+          Apri il Conto Ora
+        </a>
+      </div>
+    </div>
+
+    <!-- SEZIONE FAQ -->
+    <div class="faq-container">
+      <h2 class="faq-title">Domande Frequenti & Supporto</h2>
+
+      <!-- FAQ 1: Link e Codice -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>Come posso riscattare la promozione?</span>
+          <svg class="accordion-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="accordion-content">
+          <div class="content-body">
+            Ti basta cliccare sul pulsante qui sotto per accedere al portale UniCredit ed inserire il codice promozionale <strong>B2601MZFF621B2</strong> durante la fase di registrazione.
+            <div class="btn-group">
+              <a href="https://prodotti-per-te.unicredit.it/workflow/UCX_AOO_GENIUS_UCI?tenant_code=BBB&target_tenant_code=BBB" target="_blank" class="btn btn-primary">
+                Vai al Sito UniCredit
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 2: Spiegazione Video TikTok -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>Dove trovo la spiegazione video passo-passo?</span>
+          <svg class="accordion-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="accordion-content">
+          <div class="content-body">
+            Ho spiegato tutto la procedura a voce in un video dedicato su TikTok. Puoi guardarlo per seguire tutti i passaggi senza commettere errori.
+            <div class="btn-group">
+              <a href="https://vm.tiktok.com/ZN8R5REsF/" target="_blank" class="btn btn-tiktok">
+                Guarda la Spiegazione Video
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 3: Contatti Telegram e TikTok -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>Hai problemi o vuoi scrivermi in privato?</span>
+          <svg class="accordion-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="accordion-content">
+          <div class="content-body">
+            Se hai dubbi o vuoi assistenza prioritaria, puoi scrivermi direttamente su Telegram o nei messaggi privati di TikTok (Username: <strong>@pinguiniera</strong>).
+            <div class="btn-group">
+              <a href="https://t.me/pinguiniera" target="_blank" class="btn btn-telegram">
+                Scrivimi su Telegram
+              </a>
+              <a href="https://www.tiktok.com/@pinguiniera" target="_blank" class="btn btn-tiktok">
+                Scrivimi su TikTok
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    document.querySelectorAll('.accordion-header').forEach(button => {
+      button.addEventListener('click', () => {
+        const accordionItem = button.parentElement;
+        const content = accordionItem.querySelector('.accordion-content');
+
+        document.querySelectorAll('.accordion-item').forEach(item => {
+          if (item !== accordionItem && item.classList.contains('active')) {
+            item.classList.remove('active');
+            item.querySelector('.accordion-content').style.maxHeight = null;
+          }
+        });
+
+        accordionItem.classList.toggle('active');
+
+        if (accordionItem.classList.contains('active')) {
+          content.style.maxHeight = content.scrollHeight + "px";
+        } else {
+          content.style.maxHeight = null;
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
