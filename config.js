@@ -29,7 +29,7 @@ const siteConfig = {
             title: "50€ con Buddy",
             description: "Registrati a Buddy e ottieni 50€ di bonus!",
             image: "foto/buddy.png",
-            url: "https://cpstest.it/buddy.html"
+            url: "https://bio.cpstest.it/buddy.html"
         },
         {
             title: "Temu",
