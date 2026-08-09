@@ -26,6 +26,12 @@ const siteConfig = {
     // Sponsor (Carosello)
     sponsors: [
         {
+            title: "50€ con Buddy",
+            description: "Registrati a Buddy e ottieni 50€ di bonus!",
+            image: "foto/buddy.png",
+            url: "https://cpstest.it/buddy.html"
+        },
+        {
             title: "Temu",
             description: "Offerte incredibili e sconti pazzeschi, non farti scappare l'occasione!",
             image: "foto/temu.png",
