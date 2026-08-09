@@ -1,345 +1,247 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Promo UniCredit & Info</title>
-  <style>
-    :root {
-      --primary: #0066cc;
-      --primary-hover: #004fb3;
-      --bg-card: #ffffff;
-      --bg-page: #0f172a;
-      --text-main: #f8fafc;
-      --text-card: #1e293b;
-      --text-muted: #64748b;
-      --border-color: #e2e8f0;
-      --radius: 16px;
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
-
-    body {
-      background-color: var(--bg-page);
-      color: var(--text-main);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 24px 16px;
-    }
-
-    .main-wrapper {
-      width: 100%;
-      max-width: 680px;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    /* CARD PROMO PRINCIPALE */
-    .hero-card {
-      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-      border: 1px solid #334155;
-      padding: 32px;
-      border-radius: var(--radius);
-      text-align: center;
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
-    }
-
-    .hero-title {
-      font-size: 2rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-      background: linear-gradient(to right, #38bdf8, #818cf8);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-sub {
-      color: #94a3b8;
-      font-size: 1rem;
-      margin-bottom: 24px;
-    }
-
-    .code-container {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px dashed #475569;
-      border-radius: 12px;
-      padding: 16px;
-      margin-bottom: 24px;
-    }
-
-    .code-label {
-      font-size: 0.85rem;
-      color: #94a3b8;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 6px;
-    }
-
-    .code-value {
-      font-family: monospace;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #38bdf8;
-      letter-spacing: 2px;
-    }
-
-    /* FAQ CONTAINER (LIGHT THEME DENTRO LA CARD) */
-    .faq-container {
-      background: var(--bg-card);
-      color: var(--text-card);
-      padding: 32px;
-      border-radius: var(--radius);
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
-    }
-
-    .faq-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      text-align: center;
-      color: var(--text-card);
-    }
-
-    .accordion-item {
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
-      margin-bottom: 12px;
-      overflow: hidden;
-      transition: var(--transition);
-    }
-
-    .accordion-item:hover {
-      border-color: #cbd5e1;
-    }
-
-    .accordion-header {
-      width: 100%;
-      padding: 18px 20px;
-      background: none;
-      border: none;
-      text-align: left;
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--text-card);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-
-    .accordion-header:hover {
-      background-color: #f8fafc;
-    }
-
-    .accordion-icon {
-      width: 20px;
-      height: 20px;
-      transition: transform 0.3s ease;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      flex-shrink: 0;
-    }
-
-    .accordion-item.active .accordion-icon {
-      transform: rotate(180deg);
-    }
-
-    .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease-out, padding 0.35s ease;
-      background-color: #ffffff;
-      padding: 0 20px;
-    }
-
-    .accordion-item.active .accordion-content {
-      padding: 0 20px 20px 20px;
-    }
-
-    .content-body {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      line-height: 1.6;
-      border-top: 1px solid #f1f5f9;
-      padding-top: 14px;
-    }
-
-    /* BOTTONI */
-    .btn-group {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 16px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: var(--transition);
-      flex: 1;
-      min-width: 180px;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background-color: var(--primary);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background-color: var(--primary-hover);
-      transform: translateY(-2px);
-    }
-
-    .btn-telegram {
-      background-color: #229ED9;
-      color: white;
-    }
-
-    .btn-telegram:hover {
-      background-color: #1a82b4;
-      transform: translateY(-2px);
-    }
-
-    .btn-tiktok {
-      background-color: #000000;
-      color: white;
-    }
-
-    .btn-tiktok:hover {
-      background-color: #1a1a1a;
-      transform: translateY(-2px);
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conto Genius Buddy – Guida completa</title>
+<meta name="description" content="Come aprire il Conto Genius Buddy di UniCredit, passo dopo passo: registrazione, codice referral, ricarica e premio.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <div class="main-wrapper">
-    
-    <!-- CARD PRINCIPALE HERO -->
-    <div class="hero-card">
-      <h1 class="hero-title">Promozione UniCredit</h1>
-      <p class="hero-sub">Usa il codice promozionale qui sotto per richiedere il conto direttamente online.</p>
-      
-      <div class="code-container">
-        <div class="code-label">Il tuo Codice Promo</div>
-        <div class="code-value">B2601MZFF621B2</div>
-      </div>
+<div class="site">
 
-      <div class="btn-group">
-        <a href="https://prodotti-per-te.unicredit.it/workflow/UCX_AOO_GENIUS_UCI?tenant_code=BBB&target_tenant_code=BBB" target="_blank" class="btn btn-primary">
-          Apri il Conto Ora
-        </a>
-      </div>
-    </div>
-
-    <!-- SEZIONE FAQ -->
-    <div class="faq-container">
-      <h2 class="faq-title">Domande Frequenti & Supporto</h2>
-
-      <!-- FAQ 1: Link e Codice -->
-      <div class="accordion-item">
-        <button class="accordion-header">
-          <span>Come posso riscattare la promozione?</span>
-          <svg class="accordion-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="accordion-content">
-          <div class="content-body">
-            Ti basta cliccare sul pulsante qui sotto per accedere al portale UniCredit ed inserire il codice promozionale <strong>B2601MZFF621B2</strong> durante la fase di registrazione.
-            <div class="btn-group">
-              <a href="https://prodotti-per-te.unicredit.it/workflow/UCX_AOO_GENIUS_UCI?tenant_code=BBB&target_tenant_code=BBB" target="_blank" class="btn btn-primary">
-                Vai al Sito UniCredit
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ 2: Spiegazione Video TikTok -->
-      <div class="accordion-item">
-        <button class="accordion-header">
-          <span>Dove trovo la spiegazione video passo-passo?</span>
-          <svg class="accordion-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="accordion-content">
-          <div class="content-body">
-            Ho spiegato tutto la procedura a voce in un video dedicato su TikTok. Puoi guardarlo per seguire tutti i passaggi senza commettere errori.
-            <div class="btn-group">
-              <a href="https://vm.tiktok.com/ZN8R5REsF/" target="_blank" class="btn btn-tiktok">
-                Guarda la Spiegazione Video
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ 3: Contatti Telegram e TikTok -->
-      <div class="accordion-item">
-        <button class="accordion-header">
-          <span>Hai problemi o vuoi scrivermi in privato?</span>
-          <svg class="accordion-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="accordion-content">
-          <div class="content-body">
-            Se hai dubbi o vuoi assistenza prioritaria, puoi scrivermi direttamente su Telegram o nei messaggi privati di TikTok (Username: <strong>@pinguiniera</strong>).
-            <div class="btn-group">
-              <a href="https://t.me/pinguiniera" target="_blank" class="btn btn-telegram">
-                Scrivimi su Telegram
-              </a>
-              <a href="https://www.tiktok.com/@pinguiniera" target="_blank" class="btn btn-tiktok">
-                Scrivimi su TikTok
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
+  <!-- HERO -->
+  <div class="profile-card">
+    <div class="memoji">🐧</div>
+    <div class="handle">Genius Buddy</div>
+    <p class="line">La guida completa per aprirlo</p>
+    <p class="line">5 minuti, 10€, un premio in arrivo</p>
   </div>
 
-  <script>
-    document.querySelectorAll('.accordion-header').forEach(button => {
-      button.addEventListener('click', () => {
-        const accordionItem = button.parentElement;
-        const content = accordionItem.querySelector('.accordion-content');
+  <!-- COS'È -->
+  <div class="section-header">
+    <h3><i class="fa-solid fa-circle-info"></i> Cos'è</h3>
+  </div>
+  <div class="info-card">
+    <p><strong>Genius Buddy</strong> è il programma con cui UniCredit ti premia se apri un Conto Genius passando dal link di un "buddy" (in questo caso il mio 👇) e da un codice referral.</p>
+    <p>Per te il conto è <strong>gratuito</strong> se scegli l'opzione con carta virtuale, si apre online in pochi minuti e puoi chiuderlo quando vuoi, senza vincoli. Completando poche operazioni semplici arriva un premio in denaro, di solito entro una settimana.</p>
+  </div>
 
-        document.querySelectorAll('.accordion-item').forEach(item => {
-          if (item !== accordionItem && item.classList.contains('active')) {
-            item.classList.remove('active');
-            item.querySelector('.accordion-content').style.maxHeight = null;
-          }
-        });
+  <!-- CTA REGISTRAZIONE -->
+  <div class="section-header">
+    <h3><i class="fa-solid fa-rocket"></i> Registrati</h3>
+  </div>
+  <div class="links">
+    <a class="link" data-type="gradient" href="https://prodotti-per-te.unicredit.it/workflow/UCX_AOO_GENIUS_UCI?tenant_code=BBB&target_tenant_code=BBB" target="_blank" rel="noopener">
+      <div class="chip"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+      <div class="label">
+        <div class="title">Apri il conto</div>
+        <div class="sub">Genius Buddy · UniCredit</div>
+      </div>
+      <div class="arrow"><i class="fa-solid fa-chevron-right"></i></div>
+    </a>
+  </div>
 
-        accordionItem.classList.toggle('active');
+  <div class="notice">
+    <i class="fa-solid fa-triangle-exclamation"></i>
+    <span>Se sei su TikTok o Instagram, il sito potrebbe non caricarsi bene nel browser interno dell'app. Tocca i <strong>tre puntini in alto a destra</strong> e scegli <strong>"Apri nel browser"</strong> (Safari/Chrome) prima di registrarti.</span>
+  </div>
 
-        if (accordionItem.classList.contains('active')) {
-          content.style.maxHeight = content.scrollHeight + "px";
-        } else {
-          content.style.maxHeight = null;
+  <!-- CODICE REFERRAL -->
+  <div class="code-box">
+    <div class="code-label">Codice referral da inserire in fase di registrazione</div>
+    <div class="code-row">
+      <span class="code-value" id="refCode">B2601MZFF621B2</span>
+      <button class="copy-btn" id="copyBtn" onclick="copyCode()">
+        <i class="fa-solid fa-copy"></i> <span id="copyLabel">Copia</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- COME FUNZIONA -->
+  <div class="section-header">
+    <h3><i class="fa-solid fa-list-check"></i> Come funziona</h3>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text">
+        <h4>Registrati con il link</h4>
+        <p>Scegli l'opzione con <strong>carta virtuale</strong>: è gratuita da subito. La carta fisica invece ha un costo di spedizione, e a noi non serve.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text">
+        <h4>Inserisci il codice referral</h4>
+        <p>Durante la registrazione, incolla il codice qui sopra quando te lo chiede.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text">
+        <h4>Scarica l'app UniCredit</h4>
+        <p>Attiva l'app sul telefono seguendo la procedura guidata.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-text">
+        <h4>Fai un bonifico e ricarica 10€</h4>
+        <p>Trasferisci qualche euro dal tuo altro conto, poi ricarica il nuovo conto con 10€.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-text">
+        <h4>Spendi i 10€ come vuoi</h4>
+        <p>Vanno bene anche un buono Amazon o un acquisto qualsiasi: l'importante è che il denaro venga effettivamente speso.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-text">
+        <h4>Ricevi il premio</h4>
+        <p>Di solito arriva entro circa una settimana dal completamento dei passaggi.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIDEO SPIEGAZIONE -->
+  <div class="section-header">
+    <h3><i class="fa-solid fa-video"></i> Preferisci vederlo spiegato?</h3>
+  </div>
+  <div class="links">
+    <a class="link" data-type="tiktok" href="https://vm.tiktok.com/ZN8R5REsF/" target="_blank" rel="noopener">
+      <div class="chip"><i class="fa-brands fa-tiktok"></i></div>
+      <div class="label">
+        <div class="title">Guarda il video</div>
+        <div class="sub">Te lo spiego a voce su TikTok</div>
+      </div>
+      <div class="arrow"><i class="fa-solid fa-chevron-right"></i></div>
+    </a>
+  </div>
+
+  <!-- CHIUSURA -->
+  <div class="section-header">
+    <h3><i class="fa-solid fa-door-open"></i> Puoi chiuderlo quando vuoi</h3>
+  </div>
+  <div class="info-card">
+    <p>Il Conto Genius non ha vincoli: una volta ricevuto il premio, se non ti serve più puoi chiuderlo gratuitamente in qualsiasi momento, senza penali.</p>
+    <p>Ecco una guida che spiega passo passo come procedere: <a href="#" style="color:#00d4aa; font-weight:600;">guida alla chiusura del conto</a>.</p>
+  </div>
+  <div class="notice">
+    <i class="fa-solid fa-pen"></i>
+    <span>Nota per Paolo: non ho trovato una guida di Aranzulla dedicata proprio al Conto Genius/UniCredit (esistono sue guide per Fineco, N26, Widiba, BBVA... ma non per UniCredit). Ho lasciato il link segnaposto sopra: mandami l'URL esatto che vuoi usare e lo sistemo, oppure lo cerco meglio io.</span>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section-header">
+    <h3><i class="fa-solid fa-circle-question"></i> Domande frequenti</h3>
+  </div>
+  <div class="faq" id="faq">
+    <div class="faq-item">
+      <button class="faq-question">
+        È sicuro?
+        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+      </button>
+      <div class="faq-answer"><p>Sì. UniCredit è una banca regolamentata e il Conto Genius è un prodotto ufficiale della banca, non una promozione di terzi.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        Devo pagare qualcosa?
+        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+      </button>
+      <div class="faq-answer"><p>No, se in fase di registrazione scegli l'opzione con carta virtuale l'apertura è gratuita. La carta fisica ha invece un costo di spedizione, che puoi tranquillamente evitare.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        Posso chiuderlo subito dopo aver ricevuto il premio?
+        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+      </button>
+      <div class="faq-answer"><p>Sì, puoi chiuderlo quando vuoi e senza costi, come qualsiasi conto corrente.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        Il premio è garantito al 100%?
+        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+      </button>
+      <div class="faq-answer"><p>Il premio dipende dalle condizioni della promozione attiva al momento della registrazione: verifica sempre i dettagli aggiornati sul sito UniCredit prima di procedere.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        Quanto tempo ci vuole in tutto?
+        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+      </button>
+      <div class="faq-answer"><p>La registrazione richiede circa 5-10 minuti. Poi ti serve solo fare il bonifico, ricaricare e spendere i 10€: il resto è automatico.</p></div>
+    </div>
+  </div>
+
+  <!-- CONTATTI -->
+  <div class="section-header">
+    <h3><i class="fa-solid fa-message"></i> Hai dubbi? Scrivimi</h3>
+  </div>
+  <div class="links">
+    <a class="link" data-type="telegram" href="https://t.me/pinguiniera" target="_blank" rel="noopener">
+      <div class="chip"><i class="fa-brands fa-telegram"></i></div>
+      <div class="label">
+        <div class="title">Telegram</div>
+        <div class="sub">@pinguiniera</div>
+      </div>
+      <div class="arrow"><i class="fa-solid fa-chevron-right"></i></div>
+    </a>
+    <a class="link" data-type="tiktok" href="https://www.tiktok.com/@pinguiniera" target="_blank" rel="noopener">
+      <div class="chip"><i class="fa-brands fa-tiktok"></i></div>
+      <div class="label">
+        <div class="title">TikTok</div>
+        <div class="sub">@pinguiniera</div>
+      </div>
+      <div class="arrow"><i class="fa-solid fa-chevron-right"></i></div>
+    </a>
+  </div>
+
+</div>
+
+<script>
+  function copyCode() {
+    const code = document.getElementById('refCode').textContent;
+    const btn = document.getElementById('copyBtn');
+    const label = document.getElementById('copyLabel');
+    navigator.clipboard.writeText(code).then(() => {
+      btn.classList.add('copied');
+      label.textContent = 'Copiato!';
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        label.textContent = 'Copia';
+      }, 1800);
+    });
+  }
+
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const answer = item.querySelector('.faq-answer');
+      const isOpen = item.classList.contains('open');
+
+      document.querySelectorAll('.faq-item.open').forEach(openItem => {
+        if (openItem !== item) {
+          openItem.classList.remove('open');
+          openItem.querySelector('.faq-answer').style.maxHeight = null;
         }
       });
+
+      if (isOpen) {
+        item.classList.remove('open');
+        answer.style.maxHeight = null;
+      } else {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
     });
-  </script>
+  });
+</script>
 
 </body>
 </html>
