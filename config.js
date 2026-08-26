@@ -36,7 +36,7 @@ const siteConfig = {
             description: "Guarda i tuoi video in macchina!",
             image: "foto/cast2car.png",
             url: "https://apps.apple.com/us/app/cast2car-car-video-player/id6802499614"
-        }
+        },
         {
             title: "Temu",
             description: "Offerte incredibili e sconti pazzeschi, non farti scappare l'occasione!",
