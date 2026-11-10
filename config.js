@@ -32,10 +32,10 @@ const siteConfig = {
             url: "https://bio.cpstest.it/buddy.html"
         },
         {
-            title: "Cast2Car",
-            description: "Guarda i tuoi video in macchina!",
-            image: "foto/cast2car.png",
-            url: "https://apps.apple.com/us/app/cast2car-car-video-player/id6802499614"
+            title: "INIU P50 Pocket Rocket",
+            description: "Il powerbank super compatto e potente di cui hai bisogno.",
+            image: "foto/iniu-p50.png",
+            url: "https://amazn.so/tVBv87G"
         },
         {
             title: "Temu",
@@ -54,12 +54,6 @@ const siteConfig = {
             description: "Il powerbank Qi 2.2 magsafe super efficiente.",
             image: "foto/iniu-p781.webp",
             url: "https://amazn.so/Gd9HEtp"
-        },
-        {
-            title: "INIU P50 Pocket Rocket",
-            description: "Il powerbank super compatto e potente di cui hai bisogno.",
-            image: "foto/iniu-p50.png",
-            url: "https://amzn.to/3OB7dZF"
         },
         {
             title: "Amazon",
